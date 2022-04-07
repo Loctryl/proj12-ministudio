@@ -1,3 +1,66 @@
+const map = [
+  [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+  [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+  [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+  [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+  [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+  [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+  [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+  [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+  [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+  [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+  [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+  [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+  [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+  [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+  [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+  [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+  [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+  [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+  [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+  [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+  [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+  [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+  [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+  [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+  [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+  [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+  [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+  [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+  [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+  [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+  [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+  [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+  [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+  [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+  [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+  [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+  [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+  [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+  [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+  [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+  [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+  [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+  [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+  [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+  [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+  [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+  [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+  [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+  [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+  [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+  [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+  [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+  [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+  [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+  [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+  [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+  [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+  [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+  [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+  [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+];
+
 var cursor;
 var moveok;
 var dude;
@@ -6,15 +69,14 @@ var reticle = null;
 var playerBullets = null;
 var time = 0;
 var timer = 0;
-var Maxbullets = 100;
-var Maxzombies = 10;//max amunition. there's still not a realoading system so keep this var with high number so we don't run out of ammo
+var Maxbullets = 100; //max amunition. there's still not a realoading system so keep this var with high number so we don't run out of ammo
 var enemy = [];
 var isoX;
 var isoY;
 var ground;
 var wave = 1;
+var world;
 
-const DUDE_KEY = 'dude'
 var touch;
 
 //set Score variables
@@ -34,6 +96,11 @@ var shoot = [];
 var voiceline = [];
 var szomb = [];
 var shake;
+var debugGraphics;
+var showCollidingTiles = true;
+var showTiles = true;
+var showFaces = true;
+var collider;
 
 class Map extends Phaser.Scene {
   constructor() {
@@ -47,16 +114,16 @@ class Map extends Phaser.Scene {
       Spawn = Math.floor(Math.random() * 4)
       switch (Spawn) {
         case 0:
-          enemy.push(this.physics.add.sprite(0, 0, 'zombi').setDepth(1));
+          enemy.push(this.physics.add.sprite(0, 0, 'zombiR').setDepth(1));
           break;
         case 1:
-          enemy.push(this.physics.add.sprite(9216, 0, 'zombi').setDepth(1));
+          enemy.push(this.physics.add.sprite(9216, 0, 'zombiR').setDepth(1));
           break;
         case 2:
-          enemy.push(this.physics.add.sprite(0, 4608, 'zombi').setDepth(1));
+          enemy.push(this.physics.add.sprite(0, 4608, 'zombiR').setDepth(1));
           break;
         case 3:
-          enemy.push(this.physics.add.sprite(9216, 4608, 'zombi').setDepth(1));
+          enemy.push(this.physics.add.sprite(9216, 4608, 'zombiR').setDepth(1));
           break;
 
         default:
@@ -100,40 +167,31 @@ class Map extends Phaser.Scene {
     this.load.audio('zomb3', ['src/assets/SFX/zomb3.mp3']);
     this.load.audio('zomb4', ['src/assets/SFX/zomb4.mp3']);
     this.load.audio('orchestral', ['src/assets/SFX/orchestral.mp3'])
-    //this.load.spritesheet(DUDE_KEY, 'src/assets/sprite/dude.png', { frameWidth: 33, frameHeight: 56 });
 
-    this.load.image('zombiR', 'src/assets/sprite/FlyProfileDroite.png');
-    this.load.image('zombiL', 'src/assets/sprite/ProfileGauche.png');
+    this.load.image('zombiR', 'src/assets/sprite/FlyProfilDroite.png');
+    this.load.image('zombiL', 'src/assets/sprite/ProfilGauche.png');
     this.load.image('zombiF', 'src/assets/sprite/FlyFace1.png');
     this.load.image('zombiB', 'src/assets/sprite/FlyBack.png');
 
-    this.load.atlas(DUDE_KEY, 'src/assets/sprite/WalkProfil.png', 'src/assets/sprite/WalkProfil.json' )
-    this.load.atlas('leftKey', 'src/assets/sprite/WalkProfilLeft.png', 'src/assets/sprite/WalkProfilLeft.json' )
+    this.load.atlas('dude1', 'src/assets/sprite/FaceWalk.png', 'src/assets/sprite/FaceWalk.json')
+    this.load.atlas('dude2', 'src/assets/sprite/BackWalk.png', 'src/assets/sprite/BackWalk.json')
+    this.load.atlas('dude3', 'src/assets/sprite/WalkProfil.png', 'src/assets/sprite/WalkProfil.json')
+    this.load.atlas('dude4', 'src/assets/sprite/WalkProfilLeft.png', 'src/assets/sprite/WalkProfilLeft.json')
+    //this.load.atlas('dude5', 'src/assets/sprite/WalkDiagoBack.png', 'src/assets/sprite/WalkDiagoBack.json')
+    //this.load.atlas('dude6', 'src/assets/sprite/WalkDiagoFace.png', 'src/assets/sprite/WalkDiagoFace.json')
+    
 
-    this.load.image('base_tiles', 'src/assets/tiles/assets01.png');
-    this.load.tilemapTiledJSON('map', 'src/assets/map.json');
+    this.load.atlas('leftKey', 'src/assets/sprite/WalkProfilLeft.png', 'src/assets/sprite/WalkProfilLeft.json' )
+    this.load.image('collider', 'src/assets/sprite/col.png');
+    this.load.image('gravel', 'src/assets/sprite/ground/gravel.png');
+    this.load.image('grass', 'src/assets/sprite/grass.png');
+    this.load.image('wall', 'src/assets/sprite/wall.png');
+    this.load.image('arche', 'src/assets/sprite/archeeliza.png');
+    this.load.image('wheel', 'src/assets/sprite/wheel.png');
+    this.load.image('house', 'src/assets/sprite/house.png');
   }
 
   create() {
-    
-    
-
-    //Map
-    var map = this.add.tilemap('map');
-    var tileset1 = map.addTilesetImage('assets', 'base_tiles');
-    map.createLayer('ground', [tileset1]);
-    map.createLayer('walls', [tileset1]);
-    map.createLayer('walls2', [tileset1]);
-    map.createLayer('portals', [tileset1]);
-    map.createLayer('assets', [tileset1]);
-    const col = map.createStaticLayer('col', [tileset1]);
-
-
-    /*for (let i = 2; i < 8; i++) {
-      map.createLayer('Tile Layer ' + i, [tileset1]);
-    }*/
-
-    
     //Sound part
     this.sound.pauseOnBlur = false;
     damaged.push(this.sound.add('damaged1'));
@@ -166,9 +224,10 @@ class Map extends Phaser.Scene {
     this.orchestral.play();
     this.orchestral.setVolume(0.1);
     this.orchestral.setLoop(true);
-    
+
+  
     //Spawn player
-    dude = this.physics.add.sprite(500, 500, DUDE_KEY)
+    dude = this.physics.add.sprite(500, 500, 'dude1')
     CreatePlayer();
 
     //bullets settings
@@ -188,10 +247,59 @@ class Map extends Phaser.Scene {
     cursor = this.input.keyboard.createCursorKeys();
     reticle.setDepth(1);
 
-    //world collider
-    this.physics.add.collider(dude, col);
-    col.setCollisionByProperty({ collides: true });
-    col.setCollision([4]);
+  
+    //display map
+    for (let r = 0; r < map.length; r++) {
+      for (let c = 0; c < map[0].length; c++) {
+        switch (map[r][c]) {
+          case 0:
+            ground = this.add.sprite(0, 0, 'gravel');
+            break;
+          case 1:
+            ground = this.add.sprite(0, 0, 'gravel');
+            //world = this.physics.add.sprite(600, 400, 'wheel');
+            world = this.physics.add.sprite(100, 100, 'house');
+            world.body.pushable = false;
+            break;
+          case 2:
+            ground = this.add.sprite(0, 0, 'gravel');
+            world = this.physics.add.sprite(0, 0, 'arche');
+            world.body.pushable = false;
+            break;
+          case 3:
+            ground = this.add.sprite(0, 0, 'gravel');
+            world = this.physics.add.sprite(700, 600, 'wheel');
+            world.body.pushable = false;
+            break;
+          case 4:
+            ground = this.add.sprite(0, 0, 'gravel');
+            world = this.physics.add.sprite(300,400, 'arche');
+            world.body.pushable = false;
+            break;
+          case 5:
+            ground = this.add.sprite(0, 0, 'gravel');
+            world = this.physics.add.sprite(0, 0, 'arche');
+            world.body.pushable = false;
+            break;
+          case 6:
+            ground = this.add.sprite(0, 0, 'gravel');
+            world = this.physics.add.sprite(0, 0, 'arche');
+            world.body.pushable = false;
+            break;
+          default:
+            break;
+        }
+        isoX = (550 + r * 20) - (0 + c * 20);
+        isoY = ((-630 + r * 23) + (0 + c * 23)) / 2;
+
+        //collide with world
+        this.physics.add.collider(dude, world, function () {
+          moveok = false;
+        });
+        Phaser.Display.Align.In.TopCenter(ground, this.add.zone(isoX, isoY, 0, 0));
+      }
+    }
+    
 
     //Zombies settings
     touch = 1;
@@ -207,13 +315,14 @@ class Map extends Phaser.Scene {
         shake =1; 
       }
     }); 
-    animeZomb();
+    //animeZomb();
     this.physics.add.collider(enemy, enemy, function () {}); //collide between zombies
 
     //Collide between Zombies and bullets
     this.physics.add.overlap(enemy, playerBullets, function (enemy, playerBullets) {
       playerBullets.destroy();
       enemy.destroy();
+      
       //update score
       score += 10 * scoreMultiplicator;
       scoreText.setText('Score: ' + score);
@@ -241,9 +350,8 @@ class Map extends Phaser.Scene {
     lifeDisp[4].setVisible(0);
     scoreText.setDepth(99); 
     text = this.add.text(1080/2-120, 165,'',style).setScrollFactor(0);
-    timerEvents.push(this.time.addEvent({ delay: Phaser.Math.Between(4999, 5000), loop: true }));
-    timerEvents.push(this.time.addEvent({ delay: Phaser.Math.Between(2999, 3000), loop: true }));
-    timerEvents.push(this.time.addEvent({ delay: Phaser.Math.Between(999, 1000), loop: true }));
+    timerEvents.push(this.time.addEvent({ delay: Phaser.Math.Between(5000, 5000), loop: true }));
+    timerEvents.push(this.time.addEvent({ delay: Phaser.Math.Between(3000, 3000), loop: true }));
     text.setDepth(99);
 
     // Pointer lock will only work after mousedown
@@ -284,21 +392,23 @@ class Map extends Phaser.Scene {
     }
     else if (cursor.right.isDown) {
       dudeVelocity.x = 1;
+
       dude.anims.play('right', true)
-    }
-    else{
-      dude.anims.play('idle', true)
     }
      if (cursor.up.isDown) {
       dudeVelocity.y = -1;
+      dude.anims.play('up', true)
     }
     else if (cursor.down.isDown) {
       dudeVelocity.y = 1;
+      dude.anims.play('down', true)
+    }
+
+    if(!cursor.down.isDown && !cursor.up.isDown && !cursor.right.isDown && !cursor.left.isDown){
+      dude.anims.play('idle', true)
     }
     
       
-    
-    
     dudeVelocity.scale(speedWalk);
     dude.setVelocity(dudeVelocity.x, dudeVelocity.y);
 
@@ -315,17 +425,16 @@ class Map extends Phaser.Scene {
         wave++;
       }  
     }
-    if (timerEvents[2].getProgress().toString() == 0.9){
-      time ++;
-      console.log(time);
-    }
-    output.push('Timer : ' + time + 's');
     if (timerEvents[1].getProgress().toString().substr(0, 5) == 0.9)  {
       touch = 1;
     }
     
     text.setText(output);
-
+    
+    if(hp == 5){
+      lifeDisp[0].setVisible(1);
+      lifeDisp[4].setVisible(0);
+    }
     if(hp == 4){
       lifeDisp[0].setVisible(0);
       lifeDisp[1].setVisible(1);
@@ -368,23 +477,23 @@ class Map extends Phaser.Scene {
     }
   }
 }
-
+/*
 function animeZomb(){
-  for (let i = 0; i < Maxzombies; i++) {
-    if(enemy[i].veolocity.x>0){
-      enemy[i] = physics.add.sprite(enemy[i].x, enemy[i].y, 'zombiR')
+  for (let i = 0; i < 10; i++) {
+    if(enemy[i].velocity.x>0){
+      enemy[i].add.image(100, 100, 'zombiR')
     }
-    if(enemy[i].veolocity.x<0){
-      enemy[i] = physics.add.sprite(enemy[i].x, enemy[i].y, 'zombiL')
+    if(enemy[i].velocity.x<0){
+      enemy[i].add.image(100 , 100, 'zombiL')
     }
-    if(enemy[i].veolocity.y>0){
-      enemy[i] = physics.add.sprite(enemy[i].x, enemy[i].y, 'zombiB')
+    if(enemy[i].velocity.y>0){
+      enemy[i].add.image(100 , 100, 'zombiB')
     }
-    if(enemy[i].veolocity.Y<0){
-      enemy[i] = physics.add.sprite(enemy[i].x, enemy[i].y, 'zombiF')
+    if(enemy[i].velocity.y<0){
+      enemy[i].add.image(100 , 100, 'zombiF')
     }
   }
-}
+}*/
 
 function CreatePlayer() {
   hp = 5;
@@ -392,50 +501,103 @@ function CreatePlayer() {
 
   dude.anims.create({
     key: 'idle',
-    frames: [{ key: DUDE_KEY, frame: 'WalkProfil1.png'  }],
-  })
-
-  dude.anims.create({
-    key: 'right',
     frames: [{
-      key: DUDE_KEY,
-      frame: 'WalkProfil1.png'
-    }, {
-      key: DUDE_KEY,
-      frame: 'WalkProfil2.png'
-    },{
-      key: DUDE_KEY,
-      frame: 'WalkProfil3.png'
-    },{
-      key: DUDE_KEY,
-      frame: 'WalkProfil4.png'
-    },{
-      key: DUDE_KEY,
-      frame: 'WalkProfil5.png'
-    }],
-    frameRate: 12,
+      key: 'dude1',
+      frame: 'FaceWalk1.png'}],
+    frameRate: 10,
     repeat: -1
   })
 
   dude.anims.create({
     key: 'left',
     frames: [{
-      key: 'leftKey',
+      key: 'dude4',
       frame: 'WalkProfilLeft1.png'
     }, {
-      key: 'leftKey',
+      key: 'dude4',
       frame: 'WalkProfilLeft2.png'
-    },{
-      key: 'leftKey',
+    }, {
+      key: 'dude4',
       frame: 'WalkProfilLeft3.png'
-    },{
-      key: 'leftKey',
+    }, {
+      key: 'dude4',
       frame: 'WalkProfilLeft4.png'
-    },{
-      key: 'leftKey', 
+    }, {
+      key: 'dude4',
       frame: 'WalkProfilLeft5.png'
-    }],
-    frameRate: 12,
+    },
+    ],
+    frameRate: 10,
     repeat: -1
   })
-} 
+
+  dude.anims.create({
+    key: 'right',
+    frames: [{
+      key: 'dude3',
+      frame: 'WalkProfil1.png'
+    }, {
+      key: 'dude3',
+      frame: 'WalkProfil2.png'
+    }, {
+      key: 'dude3',
+      frame: 'WalkProfil3.png'
+    }, {
+      key: 'dude3',
+      frame: 'WalkProfil4.png'
+    }, {
+      key: 'dude3',
+      frame: 'WalkProfil5.png'
+    },
+    ],
+    frameRate: 10,
+    repeat: -1
+  })
+
+  dude.anims.create({
+    key: 'up',
+    frames: [{
+      key: 'dude2',
+      frame: 'BackWalk1.png'
+    }, {
+      key: 'dude2',
+      frame: 'BackWalk2.png'
+    }, {
+      key: 'dude2',
+      frame: 'BackWalk3.png'
+    }, {
+      key: 'dude2',
+      frame: 'BackWalk4.png'
+    }, {
+      key: 'dude2',
+      frame: 'BackWalk5.png'
+    },
+    ],
+    frameRate: 10,
+    repeat: -1
+  })
+
+  dude.anims.create({
+    key: 'down',
+    frames: [{
+      key: 'dude1',
+      frame: 'FaceWalk1.png'
+    }, {
+      key: 'dude1',
+      frame: 'FaceWalk2.png'
+    }, {
+      key: 'dude1',
+      frame: 'FaceWalk3.png'
+    }, {
+      key: 'dude1',
+      frame: 'FaceWalk4.png'
+    }, {
+      key: 'dude1',
+      frame: 'FaceWalk5.png'
+    },
+    ],
+    frameRate: 10,
+    repeat: -1
+  })
+
+}

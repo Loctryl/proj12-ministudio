@@ -1,0 +1,125 @@
+{
+	"textures": [
+		{
+			"image": "FaceWalk.png",
+			"format": "RGBA8888",
+			"size": {
+				"w": 120,
+				"h": 62
+			},
+			"scale": 1,
+			"frames": [
+				{
+					"filename": "FaceWalk1.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 48,
+						"h": 60
+					},
+					"spriteSourceSize": {
+						"x": 13,
+						"y": 0,
+						"w": 22,
+						"h": 60
+					},
+					"frame": {
+						"x": 1,
+						"y": 1,
+						"w": 22,
+						"h": 60
+					}
+				},
+				{
+					"filename": "FaceWalk2.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 48,
+						"h": 60
+					},
+					"spriteSourceSize": {
+						"x": 13,
+						"y": 0,
+						"w": 22,
+						"h": 60
+					},
+					"frame": {
+						"x": 25,
+						"y": 1,
+						"w": 22,
+						"h": 60
+					}
+				},
+				{
+					"filename": "FaceWalk3.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 48,
+						"h": 60
+					},
+					"spriteSourceSize": {
+						"x": 13,
+						"y": 0,
+						"w": 22,
+						"h": 60
+					},
+					"frame": {
+						"x": 49,
+						"y": 1,
+						"w": 22,
+						"h": 60
+					}
+				},
+				{
+					"filename": "FaceWalk4.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 48,
+						"h": 60
+					},
+					"spriteSourceSize": {
+						"x": 13,
+						"y": 0,
+						"w": 22,
+						"h": 60
+					},
+					"frame": {
+						"x": 73,
+						"y": 1,
+						"w": 22,
+						"h": 60
+					}
+				},
+				{
+					"filename": "FaceWalk5.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 48,
+						"h": 60
+					},
+					"spriteSourceSize": {
+						"x": 13,
+						"y": 0,
+						"w": 22,
+						"h": 60
+					},
+					"frame": {
+						"x": 97,
+						"y": 1,
+						"w": 22,
+						"h": 60
+					}
+				}
+			]
+		}
+	],
+	"meta": {
+		"app": "https://www.codeandweb.com/texturepacker",
+		"version": "3.0",
+		"smartupdate": "$TexturePacker:SmartUpdate:e15f05d8f6f664f258393854d2d5f9c5:1f1c3f2a1915613ee5f40da47415d674:5b7943cd411a022cdb07ea20c8b6df35$"
+	}
+}
