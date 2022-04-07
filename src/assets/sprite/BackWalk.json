@@ -1,16 +1,16 @@
 {
 	"textures": [
 		{
-			"image": "WalkProfilLeft.png",
+			"image": "BackWalk.png",
 			"format": "RGBA8888",
 			"size": {
-				"w": 183,
+				"w": 120,
 				"h": 62
 			},
 			"scale": 1,
 			"frames": [
 				{
-					"filename": "WalkProfilLeft4.png",
+					"filename": "BackWalk1.png",
 					"rotated": false,
 					"trimmed": true,
 					"sourceSize": {
@@ -18,20 +18,20 @@
 						"h": 60
 					},
 					"spriteSourceSize": {
-						"x": 5,
+						"x": 13,
 						"y": 0,
-						"w": 30,
+						"w": 22,
 						"h": 60
 					},
 					"frame": {
-						"x": 0,
+						"x": 1,
 						"y": 1,
-						"w": 30,
+						"w": 22,
 						"h": 60
 					}
 				},
 				{
-					"filename": "WalkProfilLeft2.png",
+					"filename": "BackWalk2.png",
 					"rotated": false,
 					"trimmed": true,
 					"sourceSize": {
@@ -39,20 +39,20 @@
 						"h": 60
 					},
 					"spriteSourceSize": {
-						"x": 0,
-						"y": 1,
-						"w": 36,
-						"h": 59
+						"x": 13,
+						"y": 0,
+						"w": 22,
+						"h": 60
 					},
 					"frame": {
 						"x": 25,
 						"y": 1,
-						"w": 36,
-						"h": 59
+						"w": 22,
+						"h": 60
 					}
 				},
 				{
-					"filename": "WalkProfilLeft5.png",
+					"filename": "BackWalk3.png",
 					"rotated": false,
 					"trimmed": true,
 					"sourceSize": {
@@ -60,20 +60,20 @@
 						"h": 60
 					},
 					"spriteSourceSize": {
-						"x": 8,
-						"y": 1,
-						"w": 33,
-						"h": 59
+						"x": 13,
+						"y": 0,
+						"w": 22,
+						"h": 60
 					},
 					"frame": {
-						"x": 64,
+						"x": 49,
 						"y": 1,
-						"w": 33,
-						"h": 59
+						"w": 22,
+						"h": 60
 					}
 				},
 				{
-					"filename": "WalkProfilLeft3.png",
+					"filename": "BackWalk4.png",
 					"rotated": false,
 					"trimmed": true,
 					"sourceSize": {
@@ -81,20 +81,20 @@
 						"h": 60
 					},
 					"spriteSourceSize": {
-						"x": 8,
-						"y": 1,
-						"w": 40,
-						"h": 59
+						"x": 13,
+						"y": 0,
+						"w": 22,
+						"h": 60
 					},
 					"frame": {
-						"x": 99,
+						"x": 73,
 						"y": 1,
-						"w": 40,
-						"h": 59
+						"w": 22,
+						"h": 60
 					}
 				},
 				{
-					"filename": "WalkProfilLeft1.png",
+					"filename": "BackWalk5.png",
 					"rotated": false,
 					"trimmed": true,
 					"sourceSize": {
@@ -102,16 +102,16 @@
 						"h": 60
 					},
 					"spriteSourceSize": {
-						"x": 0,
-						"y": 1,
-						"w": 46,
-						"h": 59
+						"x": 13,
+						"y": 0,
+						"w": 22,
+						"h": 60
 					},
 					"frame": {
-						"x": 137,
+						"x": 97,
 						"y": 1,
-						"w": 46,
-						"h": 59
+						"w": 22,
+						"h": 60
 					}
 				}
 			]
@@ -120,6 +120,6 @@
 	"meta": {
 		"app": "https://www.codeandweb.com/texturepacker",
 		"version": "3.0",
-		"smartupdate": "$TexturePacker:SmartUpdate:31cfb5e2dbbc5a005096cf7245b2b5bf:42a14f9191dcde5d89f65f5699960370:4202e6c3e3eff8ec409ac5716c6b8e9b$"
+		"smartupdate": "$TexturePacker:SmartUpdate:053e48e14ef78da443ac73617f429993:1d5a6a6129be1c50f1f8ce0e9c707707:e89ee43859f763c5f1c67190b9783cb9$"
 	}
 }
