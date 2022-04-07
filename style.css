@@ -18,11 +18,9 @@ p{
 }
 
 canvas{
-    margin-top: 50px;
-    position: relative;
-    left: 22%;
-    right: 22%;
+    margin-top: 50px;   
     border-radius: 1vh;
+    margin-left: 22% ;
 }
 
 .absolute {

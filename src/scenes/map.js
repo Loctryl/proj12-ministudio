@@ -115,16 +115,16 @@ class Map extends Phaser.Scene {
       Spawn = Math.floor(Math.random() * 4)
       switch (Spawn) {
         case 0:
-          currentZomb = enemy.push(this.physics.add.sprite(0, 0, 'zombiR').setDepth(1));
+          currentZomb = enemy.push(this.physics.add.sprite(0, 0, 'zombi').setDepth(1));
           break;
         case 1:
-          currentZomb = enemy.push(this.physics.add.sprite(9216, 0, 'zombiR').setDepth(1));
+          currentZomb = enemy.push(this.physics.add.sprite(9216, 0, 'zombi').setDepth(1));
           break;
         case 2:
-          currentZomb = enemy.push(this.physics.add.sprite(0, 4608, 'zombiR').setDepth(1));
+          currentZomb = enemy.push(this.physics.add.sprite(0, 4608, 'zombi').setDepth(1));
           break;
         case 3:
-          currentZomb = enemy.push(this.physics.add.sprite(9216, 4608, 'zombiR').setDepth(1));
+          currentZomb = enemy.push(this.physics.add.sprite(9216, 4608, 'zombi').setDepth(1));
           break;
           
 
@@ -169,15 +169,8 @@ class Map extends Phaser.Scene {
     this.load.audio('zomb3', ['src/assets/SFX/zomb3.mp3']);
     this.load.audio('zomb4', ['src/assets/SFX/zomb4.mp3']);
     this.load.audio('orchestral', ['src/assets/SFX/orchestral.mp3'])
-    //this.load.spritesheet(DUDE_KEY, 'src/assets/sprite/dude.png', { frameWidth: 33, frameHeight: 56 });
-    this.load.spritesheet('zombi', 'src/assets/sprite/animZ.png', { frameWidth: 33, frameHeight: 56 });
-    //this.load.atlas(DUDE_KEY, 'src/assets/sprite/WalkProfil.png', 'src/assets/sprite/WalkProfil.json')
-    this.load.atlas('leftKey', 'src/assets/sprite/WalkProfilLeft.png', 'src/assets/sprite/WalkProfilLeft.json')
 
-    this.load.image('zombiR', 'src/assets/sprite/FlyProfilDroite.png');
-    this.load.image('zombiL', 'src/assets/sprite/ProfilGauche.png');
-    this.load.image('zombiF', 'src/assets/sprite/FlyFace1.png');
-    this.load.image('zombiB', 'src/assets/sprite/FlyBack.png');
+    this.load.image('zombi', 'src/assets/sprite/FlyProfilDroite.png');
 
     this.load.atlas('dude1', 'src/assets/sprite/FaceWalk.png', 'src/assets/sprite/FaceWalk.json')
     this.load.atlas('dude2', 'src/assets/sprite/BackWalk.png', 'src/assets/sprite/BackWalk.json')
@@ -321,7 +314,7 @@ class Map extends Phaser.Scene {
     //Zombies settings
     touch = 1;
     for (let i = 0; i < 5; i++) {
-      enemy[i] = this.physics.add.sprite(Math.random() * 500, Math.random() * 500, 'zombiR').setDepth(1);
+      enemy[i] = this.physics.add.sprite(Math.random() * 500, Math.random() * 500, 'zombi').setDepth(1);
       this.physics.moveToObject(enemy[i], dude, 100)
     }
     this.physics.add.collider(dude, enemy, function () {
@@ -356,11 +349,11 @@ class Map extends Phaser.Scene {
 
     var style = { font: "bold 25px Arial", fill: "#fff", boundsAlignH: "center", boundsAlignV: "middle" };
     scoreText = this.add.text(250, 165, 'Score: 0', style).setScrollFactor(0);
-    lifeDisp.push(this.add.image(250, 350, 'fulllife').setScrollFactor(0));
-    lifeDisp.push(this.add.image(250, 350, 'life-1').setScrollFactor(0));
-    lifeDisp.push(this.add.image(250, 350, 'life-2').setScrollFactor(0));
-    lifeDisp.push(this.add.image(250, 350, 'life-3').setScrollFactor(0));
-    lifeDisp.push(this.add.image(250, 350, 'life-4').setScrollFactor(0));
+    lifeDisp.push(this.add.image(250, 350, 'fulllife').setScrollFactor(0).setDepth(99));
+    lifeDisp.push(this.add.image(250, 350, 'life-1').setScrollFactor(0).setDepth(99));
+    lifeDisp.push(this.add.image(250, 350, 'life-2').setScrollFactor(0).setDepth(99));
+    lifeDisp.push(this.add.image(250, 350, 'life-3').setScrollFactor(0).setDepth(99));
+    lifeDisp.push(this.add.image(250, 350, 'life-4').setScrollFactor(0).setDepth(99));
     lifeDisp[1].setVisible(0);
     lifeDisp[2].setVisible(0);
     lifeDisp[3].setVisible(0);
@@ -392,15 +385,7 @@ class Map extends Phaser.Scene {
 
   update() {
     
-    for (let i = 0; i < currentZomb; i++) {
-      var angleRad = Phaser.Math.Angle.Between(enemy[i].x, enemy[i].y, dude.x, dude.y);
-        var angle = Phaser.Math.RadToDeg(angleRad);
-        console.log(angle)
-        if(angle>45 && angle<135){
-          enemy[i].add.image(enemy[i].x , enemy[i].y, 'zombF').setScrollFactor(0);
-          console.log("aled")
-        }
-    }
+    
 
     
     // Constrain position of constrainReticle
@@ -424,9 +409,6 @@ class Map extends Phaser.Scene {
 
       dude.anims.play('right', true)
     }
-    else {
-      dude.anims.play('idle', true)
-    }
      if (this.UP.isDown) {
       dudeVelocity.y = -1;
       dude.anims.play('up', true)
@@ -439,10 +421,20 @@ class Map extends Phaser.Scene {
     if(!this.DOWN.isDown && !this.UP.isDown && !this.RIGHT.isDown && !this.LEFT.isDown){
       dude.anims.play('idle', true)
     }
-
-
     dudeVelocity.scale(speedWalk);
     dude.setVelocity(dudeVelocity.x, dudeVelocity.y);
+/*
+    for (let i = 0; i < currentZomb; i++) {
+      var angleRad = Phaser.Math.Angle.Between(enemy[i].x, enemy[i].y, dude.x, dude.y);
+      var angle = Phaser.Math.RadToDeg(angleRad);
+      
+      if(angle>45 && angle<135){
+        enemy[i].anims.play('back');
+      }
+    }*/
+
+
+    
 
     //timer reinitialize
     var output = [];
@@ -510,11 +502,46 @@ class Map extends Phaser.Scene {
     
   }
 }
-/*
+
 function animeZomb(){
   
+  /*
+  for (let i = 0; i < currentZomb; i++) {
+    enemy[i].anims.create({
+      key: 'left',
+      frames: [{
+        key: 'zombi',
+        frame: 'zombieLeft.png'}],
+      frameRate: 10,
+      repeat: -1
+    })
+    enemy[i].anims.create({
+      key: 'right',
+      frames: [{
+        key: 'zombi',
+        frame: 'zombieRight.png'}],
+      frameRate: 10,
+      repeat: -1
+    })
+    enemy[i].anims.create({
+      key: 'face',
+      frames: [{
+        key: 'zombi',
+        frame: 'zombieFace.png'}],
+      frameRate: 10,
+      repeat: -1
+    })
+    enemy[i].anims.create({
+      key: 'back',
+      frames: [{
+        key: 'zombi',
+        frame: 'zombieBack.png'}],
+      frameRate: 10,
+      repeat: -1
+    })
+  }*/
 }
-*/
+
 function CreatePlayer() {
   hp = 5;
   dude.setDepth(5);
