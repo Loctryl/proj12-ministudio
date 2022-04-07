@@ -101,9 +101,15 @@ class Map extends Phaser.Scene {
     this.load.audio('zomb4', ['src/assets/SFX/zomb4.mp3']);
     this.load.audio('orchestral', ['src/assets/SFX/orchestral.mp3'])
     //this.load.spritesheet(DUDE_KEY, 'src/assets/sprite/dude.png', { frameWidth: 33, frameHeight: 56 });
-    this.load.spritesheet('zombi', 'src/assets/sprite/animZ.png', { frameWidth: 33, frameHeight: 56 });
+
+    this.load.image('zombiR', 'src/assets/sprite/FlyProfileDroite.png');
+    this.load.image('zombiL', 'src/assets/sprite/ProfileGauche.png');
+    this.load.image('zombiF', 'src/assets/sprite/FlyFace1.png');
+    this.load.image('zombiB', 'src/assets/sprite/FlyBack.png');
+
     this.load.atlas(DUDE_KEY, 'src/assets/sprite/WalkProfil.png', 'src/assets/sprite/WalkProfil.json' )
     this.load.atlas('leftKey', 'src/assets/sprite/WalkProfilLeft.png', 'src/assets/sprite/WalkProfilLeft.json' )
+
     this.load.image('base_tiles', 'src/assets/tiles/assets01.png');
     this.load.tilemapTiledJSON('map', 'src/assets/map.json');
   }
@@ -190,7 +196,7 @@ class Map extends Phaser.Scene {
     //Zombies settings
     touch = 1;
     for (let i = 0; i < 5; i++) {
-      enemy[i] = this.physics.add.sprite(Math.random() * 500, Math.random() * 500, 'zombi').setDepth(1);
+      enemy[i] = this.physics.add.sprite(Math.random() * 500, Math.random() * 500, 'zombiR').setDepth(1);
       this.physics.moveToObject(enemy[i], dude, 100)
     }
     this.physics.add.collider(dude, enemy, function () {
@@ -201,6 +207,7 @@ class Map extends Phaser.Scene {
         shake =1; 
       }
     }); 
+    animeZomb();
     this.physics.add.collider(enemy, enemy, function () {}); //collide between zombies
 
     //Collide between Zombies and bullets
@@ -362,6 +369,23 @@ class Map extends Phaser.Scene {
   }
 }
 
+function animeZomb(){
+  for (let i = 0; i < Maxzombies; i++) {
+    if(enemy[i].veolocity.x>0){
+      enemy[i] = physics.add.sprite(enemy[i].x, enemy[i].y, 'zombiR')
+    }
+    if(enemy[i].veolocity.x<0){
+      enemy[i] = physics.add.sprite(enemy[i].x, enemy[i].y, 'zombiL')
+    }
+    if(enemy[i].veolocity.y>0){
+      enemy[i] = physics.add.sprite(enemy[i].x, enemy[i].y, 'zombiB')
+    }
+    if(enemy[i].veolocity.Y<0){
+      enemy[i] = physics.add.sprite(enemy[i].x, enemy[i].y, 'zombiF')
+    }
+  }
+}
+
 function CreatePlayer() {
   hp = 5;
   dude.setDepth(5);
@@ -389,7 +413,7 @@ function CreatePlayer() {
       key: DUDE_KEY,
       frame: 'WalkProfil5.png'
     }],
-    frameRate: 1,
+    frameRate: 12,
     repeat: -1
   })
 
@@ -411,8 +435,7 @@ function CreatePlayer() {
       key: 'leftKey', 
       frame: 'WalkProfilLeft5.png'
     }],
-    frameRate: 1,
+    frameRate: 12,
     repeat: -1
   })
-  
 } 
