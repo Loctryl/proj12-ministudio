@@ -315,7 +315,7 @@ class Map extends Phaser.Scene {
         shake =1; 
       }
     }); 
-    //animeZomb();
+    
     this.physics.add.collider(enemy, enemy, function () {}); //collide between zombies
 
     //Collide between Zombies and bullets
@@ -374,6 +374,17 @@ class Map extends Phaser.Scene {
 }
 
   update() {
+
+    for (let i = 0; i < 10; i++) {
+      var angleRad = Phaser.Math.Angle.Between(enemy[i].body.x, enemy[i].y, dude.x, dude.y);
+        var angle = Phaser.Math.RadToDeg(angleRad);
+        if(angle>45 && angle<135){
+          enemy[i].setTexture('zombiF').setDepth(1);
+          console.log("aled")
+        }
+    }
+
+    console.log(enemy[1])
     // Constrain position of constrainReticle
     constrainReticle(reticle);
     if(shake == 1){ 
@@ -475,26 +486,14 @@ class Map extends Phaser.Scene {
         this.physics.moveToObject(enemy[i], dude, 100);
       }
     }
+    
   }
 }
 /*
 function animeZomb(){
-  for (let i = 0; i < 10; i++) {
-    if(enemy[i].velocity.x>0){
-      enemy[i].add.image(100, 100, 'zombiR')
-    }
-    if(enemy[i].velocity.x<0){
-      enemy[i].add.image(100 , 100, 'zombiL')
-    }
-    if(enemy[i].velocity.y>0){
-      enemy[i].add.image(100 , 100, 'zombiB')
-    }
-    if(enemy[i].velocity.y<0){
-      enemy[i].add.image(100 , 100, 'zombiF')
-    }
-  }
-}*/
-
+  
+}
+*/
 function CreatePlayer() {
   hp = 5;
   dude.setDepth(5);
