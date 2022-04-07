@@ -64,6 +64,7 @@ const map = [
 var cursor;
 var moveok;
 var dude;
+var currentZomb = 5;
 var hp;
 var reticle = null;
 var playerBullets = null;
@@ -114,16 +115,16 @@ class Map extends Phaser.Scene {
       Spawn = Math.floor(Math.random() * 4)
       switch (Spawn) {
         case 0:
-          enemy.push(this.physics.add.sprite(0, 0, 'zombiR').setDepth(1));
+          currentZomb = enemy.push(this.physics.add.sprite(0, 0, 'zombiR').setDepth(1));
           break;
         case 1:
-          enemy.push(this.physics.add.sprite(9216, 0, 'zombiR').setDepth(1));
+          currentZomb = enemy.push(this.physics.add.sprite(9216, 0, 'zombiR').setDepth(1));
           break;
         case 2:
-          enemy.push(this.physics.add.sprite(0, 4608, 'zombiR').setDepth(1));
+          currentZomb = enemy.push(this.physics.add.sprite(0, 4608, 'zombiR').setDepth(1));
           break;
         case 3:
-          enemy.push(this.physics.add.sprite(9216, 4608, 'zombiR').setDepth(1));
+          currentZomb = enemy.push(this.physics.add.sprite(9216, 4608, 'zombiR').setDepth(1));
           break;
 
         default:
@@ -380,17 +381,18 @@ class Map extends Phaser.Scene {
 }
 
   update() {
-
-    for (let i = 0; i < 10; i++) {
-      var angleRad = Phaser.Math.Angle.Between(enemy[i].body.x, enemy[i].y, dude.x, dude.y);
+    
+    for (let i = 0; i < currentZomb; i++) {
+      var angleRad = Phaser.Math.Angle.Between(enemy[i].x, enemy[i].y, dude.x, dude.y);
         var angle = Phaser.Math.RadToDeg(angleRad);
+        console.log(angle)
         if(angle>45 && angle<135){
-          enemy[i].setTexture('zombiF').setDepth(1);
+          enemy[i].add.image(enemy[i].x , enemy[i].y, 'zombF').setScrollFactor(0);
           console.log("aled")
         }
     }
 
-    console.log(enemy[1])
+    
     // Constrain position of constrainReticle
     constrainReticle(reticle);
     if(shake == 1){ 
