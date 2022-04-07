@@ -3,12 +3,16 @@
     padding: 0;
 }
 
-body{
-    display: flex;
-    justify-content: center;
-    margin:0;
+body {
     background: linear-gradient(0.25turn, #271111, #551f1f);
+    
 }
+
+.flex-div {
+    display: flex;
+    justify-content: center;   
+}
+
 p{
     color: #fff;
     font-size: 21px;
@@ -32,4 +36,9 @@ canvas{
 .absolute img {
     width: 150px;
     height: 130px;
+}
+
+nav {
+    background: #212121 !important;
+    padding-left: 50px;
 }
