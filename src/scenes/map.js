@@ -192,6 +192,12 @@ class Map extends Phaser.Scene {
   }
 
   create() {
+    this.UP = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.Z);
+    this.DOWN = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.S);
+    this.LEFT = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.Q);
+    this.RIGHT = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.D);
+
+
     //Sound part
     this.sound.pauseOnBlur = false;
     damaged.push(this.sound.add('damaged1'));
@@ -396,26 +402,26 @@ class Map extends Phaser.Scene {
     const speedWalk = 200;
     let dudeVelocity = new Phaser.Math.Vector2();
 
-    if (cursor.left.isDown) {
+    if (this.LEFT.isDown) {
       dudeVelocity.x = -1;
       dude.flipX;
       dude.anims.play('left', true)
     }
-    else if (cursor.right.isDown) {
+    else if (this.RIGHT.isDown) {
       dudeVelocity.x = 1;
 
       dude.anims.play('right', true)
     }
-     if (cursor.up.isDown) {
+     if (this.UP.isDown) {
       dudeVelocity.y = -1;
       dude.anims.play('up', true)
     }
-    else if (cursor.down.isDown) {
+    else if (this.DOWN.isDown) {
       dudeVelocity.y = 1;
       dude.anims.play('down', true)
     }
 
-    if(!cursor.down.isDown && !cursor.up.isDown && !cursor.right.isDown && !cursor.left.isDown){
+    if(!this.DOWN.isDown && !this.UP.isDown && !this.RIGHT.isDown && !this.LEFT.isDown){
       dude.anims.play('idle', true)
     }
     
