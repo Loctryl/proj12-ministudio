@@ -1,14 +1,14 @@
 * {
     margin: 0;
     padding: 0;
+    font-family: 'Roboto', sans-serif !important;
 }
 
-body{
-    display: flex;
-    justify-content: center;
-    margin:0;
+body {
     background: linear-gradient(0.25turn, #271111, #551f1f);
+    
 }
+
 p{
     color: #fff;
     font-size: 21px;
@@ -19,6 +19,9 @@ p{
 
 canvas{
     margin-top: 50px;
+    position: relative;
+    left: 22%;
+    right: 22%;
     border-radius: 1vh;
 }
 
@@ -33,4 +36,60 @@ canvas{
 .absolute img {
     width: 150px;
     height: 130px;
+}
+
+nav {
+    background: #212121 !important;
+    padding-left: 50px;
+}
+
+.margin-center {
+    margin-top: 50px !important;
+}
+
+.container-games {
+    border-radius: 1vh;
+    color: #FFFFFF;
+    padding: 2% !important;
+    padding-right: 20% !important;
+    padding-left: 20% !important;
+    position: relative;
+}
+
+.creator-container {
+    background: #262626 !important;
+    padding: 0 !important;
+    margin-bottom: 40px;
+    padding-top: 7px !important;
+}
+
+.creator-container p {
+    padding-left: 0px !important;
+}
+
+
+.creator-container .col h3 {
+font-size: 40px;
+}
+
+.creator-container .col p {
+font-size: 15px;
+}
+
+.creator-container img {
+width: 50% !important;
+}
+
+.more {
+    padding: 30px 30px 30px 30px !important;
+}
+
+.more p {
+    font-size: 18px !important;
+}
+
+nav {
+    position: sticky;
+    top: 0;
+    z-index: 999;
 }
