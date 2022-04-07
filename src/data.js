@@ -6,7 +6,7 @@ function getScore(){
     while(highScore[i]!=null && i<=10){
         i += 1;
     }
-//highScore.sort();
+
     if(i==10){
         while(localStorage.getItem('Score')>=highScore[i]){
             i -= 1;

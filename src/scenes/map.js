@@ -59,7 +59,6 @@ const map = [
   [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
   [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
   [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-
 ];
 
 var cursor;
@@ -70,8 +69,7 @@ var reticle = null;
 var playerBullets = null;
 var time = 0;
 var timer = 0;
-var Maxbullets = 100;
-var Maxzombies = 10;//max amunition. there's still not a realoading system so keep this var with high number so we don't run out of ammo
+var Maxbullets = 100; //max amunition. there's still not a realoading system so keep this var with high number so we don't run out of ammo
 var enemy = [];
 var isoX;
 var isoY;
@@ -184,11 +182,6 @@ class Map extends Phaser.Scene {
   }
 
   create() {
-    /*for (let i = 2; i < 8; i++) {
-      map.createLayer('Tile Layer ' + i, [tileset1]);
-    }*/
-
-    
     //Sound part
     this.sound.pauseOnBlur = false;
     damaged.push(this.sound.add('damaged1'));
@@ -222,10 +215,7 @@ class Map extends Phaser.Scene {
     this.orchestral.setVolume(0.1);
     this.orchestral.setLoop(true);
 
-    
-
-        
-    
+  
     //Spawn player
     dude = this.physics.add.sprite(500, 500, DUDE_KEY)
     CreatePlayer();
@@ -247,16 +237,7 @@ class Map extends Phaser.Scene {
     cursor = this.input.keyboard.createCursorKeys();
     reticle.setDepth(1);
 
-    //world collider
-    /*this.physics.add.collider(dude, col);
-    col.setCollisionByProperty({ collides: true });
-    col.setCollision([4]);*/
-    //col.setCollisionBetween(1, 999);
-    //dude.setCollideWorldBounds(true);
-    //this.physics.add.collider(dude, col);
-
-    //col.setCollision([4])
-
+  
     //display map
     for (let r = 0; r < map.length; r++) {
       for (let c = 0; c < map[0].length; c++) {
@@ -330,6 +311,7 @@ class Map extends Phaser.Scene {
     this.physics.add.overlap(enemy, playerBullets, function (enemy, playerBullets) {
       playerBullets.destroy();
       enemy.destroy();
+      
       //update score
       score += 10 * scoreMultiplicator;
       scoreText.setText('Score: ' + score);
@@ -357,9 +339,8 @@ class Map extends Phaser.Scene {
     lifeDisp[4].setVisible(0);
     scoreText.setDepth(99); 
     text = this.add.text(1080/2-120, 165,'',style).setScrollFactor(0);
-    timerEvents.push(this.time.addEvent({ delay: Phaser.Math.Between(4999, 5000), loop: true }));
-    timerEvents.push(this.time.addEvent({ delay: Phaser.Math.Between(2999, 3000), loop: true }));
-    timerEvents.push(this.time.addEvent({ delay: Phaser.Math.Between(999, 1000), loop: true }));
+    timerEvents.push(this.time.addEvent({ delay: Phaser.Math.Between(5000, 5000), loop: true }));
+    timerEvents.push(this.time.addEvent({ delay: Phaser.Math.Between(3000, 3000), loop: true }));
     text.setDepth(99);
 
     // Pointer lock will only work after mousedown
@@ -382,7 +363,6 @@ class Map extends Phaser.Scene {
 }
 
   update() {
-    
     // Constrain position of constrainReticle
     constrainReticle(reticle);
     if(shake == 1){ 
@@ -417,8 +397,6 @@ class Map extends Phaser.Scene {
     }
     
       
-    
-    
     dudeVelocity.scale(speedWalk);
     dude.setVelocity(dudeVelocity.x, dudeVelocity.y);
 
@@ -435,11 +413,6 @@ class Map extends Phaser.Scene {
         wave++;
       }  
     }
-    if (timerEvents[2].getProgress().toString() == 0.9){
-      time ++;
-      console.log(time);
-    }
-    output.push('Timer : ' + time + 's');
     if (timerEvents[1].getProgress().toString().substr(0, 5) == 0.9)  {
       touch = 1;
     }
